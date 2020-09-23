@@ -8,6 +8,16 @@
       "sourceRoot": "apps/store/src",
       "prefix": "bg-board",
       "architect": {
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "echo 'Your app is deployed!'"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -114,6 +124,32 @@
           }
         }
       }
+    },
+    "store-shared-ui": {
+      "projectType": "library",
+      "root": "libs/store/shared-ui",
+      "sourceRoot": "libs/store/shared-ui/src",
+      "prefix": "bg-board",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/shared-ui/tsconfig.lib.json",
+              "libs/store/shared-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/shared-ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/shared-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
