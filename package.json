@@ -61,6 +61,10 @@
     "@types/jest": "26.0.8",
     "ts-jest": "26.1.4",
     "cypress": "^4.1.0",
-    "@nrwl/cypress": "10.2.0"
+    "@nrwl/cypress": "10.2.0",
+    "@nrwl/eslint-plugin-nx": "10.2.0",
+    "@typescript-eslint/parser": "2.19.2",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "eslint-config-prettier": "6.0.0"
   }
 }
