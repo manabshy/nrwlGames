@@ -11,5 +11,4 @@ export class AppComponent {
   title = 'Board Game Hoard';
   games = getAllGames();
   formatRating = formatRating;
-
 }
